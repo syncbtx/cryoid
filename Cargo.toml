@@ -1,0 +1,48 @@
+[package]
+name = "cryoid"
+version = "0.1.0"
+edition = "2021"
+authors = ["syncbtx"]
+description = "extremely lightweight ID generator inspired by Snowflake"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/syncbtx/cryoid"
+readme = "README.md"
+documentation = "https://docs.rs/cryoid"
+rust-version = "1.79"
+keywords = ["id", "snowflake", "no_std", "distributed", "embedded"]
+categories = ["algorithms", "no-std", "embedded"]
+exclude = [".idea/", ".github/", ".gitignore"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.bench]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[features]
+default = []
+std     = []
+# derive  = ["dep:cryoid-derive"]
+
+[dependencies]
+# cryoid-derive = { version = "0.1", optional = true }
+
+[dev-dependencies]
+divan = "0.1"
+
+[[bench]]
+name = "gen"
+harness = false
+
+[[example]]
+name = "simple"
+path = "examples/simple/src/main.rs"
+
+[[example]]
+name = "minimal"
+path = "examples/minimal/src/main.rs"
