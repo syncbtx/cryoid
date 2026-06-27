@@ -4,8 +4,6 @@
 
 <small>
 
-*If you need to ask a clock for the time, you've already lost control.*
-
 `cryoid` is a product of stripping the standard [Snowflake ID](https://en.wikipedia.org/wiki/Snowflake_ID) algorithm down to its absolute bare minimum to fully harness its potential for modern, highly constrained applications.
 
 Where most implementations rely on implicit system clocks and runtime allocations, `cryoid` demands that you provide the time — giving you back complete determinism, testability, and safety without ever leaving the stack.
